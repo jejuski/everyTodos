@@ -1,0 +1,8 @@
+.layout {
+  max-width: 1200px;
+  min-width: 800px;
+  min-height: 850px;
+  margin: 0 auto;
+  background-color: rgb(163, 202, 228);
+  padding-bottom: 10px;
+}

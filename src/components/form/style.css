@@ -1,0 +1,52 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: space-between;
+  padding-left: 30px;
+}
+.inputForm {
+  background-color: #c3f0e8;
+  border-radius: 30px;
+  padding-bottom: 5px;
+  margin: 10px 30px 10px 30px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: rgb(113, 197, 239);
+}
+.form-label {
+  font-size: 23px;
+  font-weight: 700;
+  padding-left: 10px;
+  font-family: "Gugi", cursive;
+  align-items: center;
+}
+.form-control-lg {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  width: 300px;
+}
+
+.inputButton {
+  border: none;
+  height: 50px;
+  border-radius: 40px;
+  background-color: #809ce5;
+  width: 140px;
+  color: rgb(244, 247, 250);
+  font-weight: 600;
+  margin-left: 17em;
+  font-family: "Gugi", cursive;
+  font-size: 30px;
+  margin-top: 5px;
+}
+
+.inputButton:hover {
+  background-color: rgba(184, 230, 239, 0.87);
+}
+
+.card_input {
+  align-items: center;
+}

@@ -1,0 +1,38 @@
+.list-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
+  gap: 30px;
+  text-align: center;
+  margin-left: 125px;
+}
+
+.list-container {
+  background-color: rgb(243, 239, 219);
+  border-radius: 30px;
+  margin: 20px;
+  padding-top: 5px;
+  padding-bottom: 30px;
+}
+
+.add-btn {
+  background-color: rgb(206, 129, 165);
+  border-radius: 40px;
+  border: none;
+  height: 60px;
+  width: 200px;
+  font-weight: 700;
+  color: aliceblue;
+  font-size: 30px;
+  margin: auto;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding-top: 0.3em;
+}
+.add-btn:hover {
+  background-color: rgba(206, 129, 165, 0.788);
+}
+.list-container {
+  padding-top: 40px;
+}
