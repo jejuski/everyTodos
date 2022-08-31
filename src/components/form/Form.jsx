@@ -38,11 +38,12 @@ function Form() {
         <Header />
         <div onChange={handleOnSubmit} className="ml-4 flex flex-col w-2/12 form_container">
           <label className="form-label">닉네임</label>
-          <input className="form-control form-control-lg" type="text" name="writer" />
+          <input className="input-box form-control form-control-lg" placeholder="닉네임을 입력하세요." type="text" name="writer" />
           <label className="form-label">제목</label>
-          <input className="form-control form-control-lg" type="text" name="title" />
+          <input className="input-box form-control form-control-lg" placeholder="제목을 입력하세요." type="text" name="title" />
           <label className="form-label">내용</label>
-          <input className="form-control form-control-lg" type="text" name="body" />
+          <textarea class="input-box form-control form-control-lg" placeholder="내용을 입력하세요." id="exampleFormControlTextarea1" rows="3"></textarea>
+          {/* <input className="input-box form-control form-control-lg" type="text" name="body" /> */}
           <button
             className="inputButton mb-2"
             onClick={() => {

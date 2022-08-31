@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Indie Flower";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/indieflower/v17/m8JVjfNVeKWVnh3QMuKkFcZVaUuH99GUDg.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
 .row {
   display: flex;
   align-items: center;
@@ -19,8 +28,8 @@
   font-size: 23px;
   font-weight: 700;
   padding-left: 10px;
-  font-family: "Gugi", cursive;
   align-items: center;
+  margin-left:450px;
 }
 .form-control-lg {
   margin: 0 auto;
@@ -33,14 +42,13 @@
   border: none;
   height: 50px;
   border-radius: 40px;
-  background-color: #809ce5;
+  background-color: rgb(206, 129, 165);
   width: 140px;
   color: rgb(244, 247, 250);
   font-weight: 600;
-  margin-left: 17em;
-  font-family: "Gugi", cursive;
+  margin-left: 535px;
   font-size: 30px;
-  margin-top: 5px;
+  margin-top: 20px;
 }
 
 .inputButton:hover {
@@ -50,3 +58,9 @@
 .card_input {
   align-items: center;
 }
+
+.input-box{
+  align-items: center;
+}
+
+
