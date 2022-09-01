@@ -1,59 +1,60 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
+
 import { __removeComment } from "../../redux/modules/CommentSlice";
 import { __editComment } from "../../redux/modules/CommentSlice";
-import { __saveComment } from "../../redux/modules/CommentSlice";
+import {__getCommentList} from "../../redux/modules/CommentSlice";
+import {__saveComment} from "../../redux/modules/CommentSlice";
 
 import { BsTrash, BsPencil } from "react-icons/bs";
-import { useParams } from "react-router-dom";
-
-import { __getCommentList } from "../../redux/modules/CommentSlice";
-
+import { useParams, useNavigate } from "react-router-dom";
 import CommentForm from "./CommentForm";
 
 const Comment = () => {
   const dispatch = useDispatch();
   const commentList = useSelector((state) => state.comment.comment);
   const paramsId = useParams().id;
-
+  const navigate = useNavigate();
   const [comments, setComments] = useState(commentList);
 
-  useEffect(() => {
-    dispatch(__getCommentList(paramsId));
-  }, [dispatch]);
-
+ 
   const toggle_Comment = (comments, listIsdone) => {
     if (listIsdone == true) {
       dispatch(__editComment(comments));
+      dispatch(__getCommentList(paramsId));
     } else {
-      dispatch(__editComment(comments));
+     dispatch(__editComment(comments));
+      dispatch(__getCommentList(paramsId));
     }
   };
-
+  
   const save_Remove_Comment = (list, comments) => {
     if (list.editCheck == false) {
       if (window.confirm("정말로 삭제하시겠습니까?")) {
         dispatch(__removeComment(list));
+        dispatch(__getCommentList(paramsId));
       } else {
         return null;
       }
     } else {
-      console.log(list);
-      console.log(comments);
       dispatch(__saveComment(comments));
+      dispatch(__getCommentList(paramsId));
     }
   };
 
+ useEffect(() => {
+    dispatch(__getCommentList(paramsId));
+  }, []);
+
   return (
     <div>
-      <CommentForm />
+      <CommentForm/>
       <div>
         {commentList.map((comment) => {
           return (
             <div key={comment.id}>
-              <CommentContainer>
+              <CommentContainer >
                 <CommentList>
                   <div>
                     <NameStyle>
@@ -61,7 +62,7 @@ const Comment = () => {
                     </NameStyle>
                     <CommentStyle>
                       {comment.editCheck ? (
-                        <input
+                        <InputStyle
                           type="text"
                           onChange={(ev) => {
                             setComments({
@@ -114,26 +115,6 @@ export default Comment;
 const CommentContainer = styled.div`
   justify-content: space-between;
 `;
-// const InputContainer = styled.div`
-//   margin-top: 20px;
-//   display: flex;
-//   justify-content: space-between;
-// `;
-
-// const InputStyle = styled.input`
-//   border-radius: 10px;
-//   height: 40px;
-//   border: solid 1px black;
-//   margin-right: 10px;
-//   width: 200px;
-// `;
-// const ButtonStyle = styled.button`
-//   border-radius: 10px;
-//   padding: 5px 15px;
-//   border: 0;
-//   background-color: skyblue;
-//   margin-right: 5px;
-// `;
 
 const CommentList = styled.div`
   margin-top: 10px;
@@ -155,4 +136,9 @@ const IconButton = styled.button`
   border: 0;
   background-color: #ce81a5;
   margin-right: 5px;
+`;
+
+const InputStyle =  styled.input`
+border-radius: 10px;
+width:800px;
 `;

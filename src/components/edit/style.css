@@ -1,0 +1,29 @@
+.editform{
+    margin: 9% auto;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    border-radius: 50px;
+    width: 700px;
+    height:600px; 
+    background-color: rgb(243, 239, 219);
+    justify-content: center; 
+    font-family: 'HS-Regular';
+    font-size:  20px;
+  }
+
+  .ammendButton{
+    width: 100px;
+    border: 1px gray;
+    border-radius: 10px;
+    margin-right:10px;
+    background-color: #ce81a5;
+    font-weight: 20px;
+  }
+  
+  .backBtn{
+    width: 100px;
+    border: 1px gray;
+    border-radius: 10px;
+    background-color: #ce81a5;
+  }

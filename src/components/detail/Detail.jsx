@@ -25,7 +25,7 @@ function Detail() {
     <Layout>
       <Header />
       <MainContainer>
-        <p>id: {id}</p>
+        <Contents>
         <p>{title}</p>
         <p>{writer}</p>
         <p>{body}</p>
@@ -34,13 +34,13 @@ function Detail() {
           <ButtonStyle> 수정하기</ButtonStyle>
         </Link>
         <ButtonStyle
-          className="backBtn"
           onClick={() => {
             navigate(`/`);
           }}
         >
           이전으로
         </ButtonStyle>
+        </Contents>
         <Comment />
       </MainContainer>
     </Layout>
@@ -56,10 +56,20 @@ const MainContainer = styled.div`
 `;
 
 const ButtonStyle = styled.button`
-  margin-top: 20px;
+  margin-top: 5px;
   background-color: #ce81a5;
   color: white;
   border: black;
   border-radius: 10px;
   height: 40px;
+`;
+
+const Contents = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: rgb(243, 239, 219);
+  padding: 20px;
+  height:280px
+  margin-top: 10px;
 `;

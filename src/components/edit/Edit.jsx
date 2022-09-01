@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
+import "./style.css";
 import styled from "styled-components";
 import { __editTodoThunk } from "../../redux/modules/todoSlice";
 
@@ -31,8 +32,8 @@ function Edit() {
   };
 
   return (
-    <div>
-      <p>{title}</p>
+    <div className="editform">
+      <TitleAmmend>{title}</TitleAmmend>
       <Textarea
         name="body"
         rows="10"
@@ -43,7 +44,8 @@ function Edit() {
         }}
       />
       <p />
-      <button onClick={saveButtonHandler}>수정하기</button>
+      <ButtonDiv>
+      <button className="ammendButton" onClick={saveButtonHandler}>수정하기</button>
       <button
         className="backBtn"
         onClick={() => {
@@ -52,13 +54,35 @@ function Edit() {
       >
         이전으로
       </button>
+      </ButtonDiv>
     </div>
   );
 }
 
 export default Edit;
 
+const TitleAmmend =styled.p`
+width: 120px;
+height: 30px;
+background-color: white;
+text-align: center;
+vertical-align: middle;
+border-radius: 50px;
+
+`;
+
 const Textarea = styled.textarea`
+  border-radius: 50px;
+  text-align:center;
+  justify-content: center;
   width: 500px;
-  border: 1px solid #000000;
+  border: none;
+`;
+
+const ButtonDiv = styled.button`
+border:0px;
+width:500px;
+flex-direction:row;
+padding:0px;
+background-color: rgb(243, 239, 219);
 `;

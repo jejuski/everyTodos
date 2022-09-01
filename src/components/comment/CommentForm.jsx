@@ -15,7 +15,9 @@ function CommentForm() {
   });
   const AddCommentClick = (e) => {
     e.preventDefault();
-    dispatch(addComment({ ...comments, todoId: parseInt(paramsId), editCheck:false}));
+    dispatch(
+      addComment({ ...comments, todoId: parseInt(paramsId), editCheck: false })
+    );
     setComments({
       name: "",
       comment: "",
@@ -28,6 +30,11 @@ function CommentForm() {
       ...comments,
       [name]: value,
     });
+  };
+
+  const ToggleClick = () => {
+    setIsShow(!isshow);
+    //  retun( !isShow?display:none:0)
   };
 
   return (
@@ -56,17 +63,17 @@ const InputContainer = styled.div`
 `;
 
 const InputStyle1 = styled.input`
+  border: none ;
   border-radius: 10px;
   height: 40px;
-  border: none;
   margin-right: 10px;
-  width: 200px;
+  width: 120px;
 `;
 const InputStyle2 = styled.input`
+  border: none;
   border-radius: 10px;
   height: 40px;
-  border: none;
-  margin-right: 10px;
+  margin-right: 100px;
   width: 600px;
 `;
 const ButtonStyle = styled.button`
