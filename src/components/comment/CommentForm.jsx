@@ -42,7 +42,7 @@ function CommentForm() {
       <InputStyle1
         onChange={onChangeInputHandler}
         name="name"
-        placeholder="이름(5자 이내)"
+        placeholder="이름(5자 이내!)"
       ></InputStyle1>
       <InputStyle2
         onChange={onChangeInputHandler}
@@ -63,7 +63,7 @@ const InputContainer = styled.div`
 `;
 
 const InputStyle1 = styled.input`
-  border: none ;
+  border: none;
   border-radius: 10px;
   height: 40px;
   margin-right: 10px;
